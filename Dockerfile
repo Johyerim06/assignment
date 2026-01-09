@@ -4,7 +4,9 @@ FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 
 # Maven 빌드 결과물 복사
-COPY target/*.jar app.jar
+COPY ../target/*.jar app.jar
+
+EXPOSE 8080
 
 # Spring Boot 실행
 ENTRYPOINT ["java", "-jar", "app.jar"]
